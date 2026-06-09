@@ -39,7 +39,7 @@ jobs:
         mkdir cache
         Invoke-WebRequest -Uri https://github.com/LavaGang/MelonLoader/releases/download/v0.6.4/MelonLoader.x64.zip -OutFile "$(Get-Location)\cache\MelonLoader.x64.zip"        
         7z x "$(Get-Location)\cache\MelonLoader.x64.zip" -o"$(Get-Location)\Libs"     
-        Invoke-WebRequest -Uri "https://github.com/zhicheng233/Sinmai-lib-SDGB/archive/refs/heads/master.zip" -OutFile cache\Output.zip
+        Invoke-WebRequest -Uri ${{ secrets.LIBRARY_URL }} -OutFile "$(Get-Location)\cache\Output.7z"
         7z x "$(Get-Location)\cache\Output.7z" -o"$(Get-Location)\Libs"
     
     - name: Build
