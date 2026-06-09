@@ -6,6 +6,7 @@ on:
     branches: [ master ]  # 触发条件，当main分支有push时触发
   pull_request:
     branches: [ master ]  # 当向main分支发起pull request时也触发
+  workflow_dispatch:
 
 jobs:
   build:
